@@ -1,0 +1,17 @@
+html, body {
+    height:100%;
+} 
+
+body {
+    background-color: black; 
+    background-image: url('../resources/background_home.jpg');
+    background-size: auto 100%;
+    background-repeat: no-repeat;
+    background-position: left top;
+}
+
+center {
+    align-items: center;
+    padding: 0rem;
+    background-color: transparent;
+}
