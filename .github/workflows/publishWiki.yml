@@ -9,11 +9,11 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: Sync Wiki
-            uses: joeizzard/action-wiki-sync@master
-            with:
-                username: example
-                access_token: ${{ secrets.GITHUB_TOKEN }}
-                wiki_folder: wiki
-                commit_username: 'Example Name'
-                commit_email: 'example@users.noreply.github.com'
-                commit_message: 'action: wiki sync'
+        uses: joeizzard/action-wiki-sync@master
+        with:
+          username: example
+          access_token: ${{ secrets.GITHUB_TOKEN }}
+          wiki_folder: wiki
+          commit_username: "Example Name"
+          commit_email: "example@users.noreply.github.com"
+          commit_message: "action: wiki sync"
