@@ -8,9 +8,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - name: Upload Documentation to Wiki
-        uses: SwiftDocOrg/github-wiki-publish-action@v1
-        with:
-          path: "wiki"
-        env:
-          GH_PERSONAL_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Sync Wiki
+            uses: joeizzard/action-wiki-sync@master
+            with:
+                username: example
+                access_token: ${{ secrets.GITHUB_TOKEN }}
+                wiki_folder: wiki
+                commit_username: 'Example Name'
+                commit_email: 'example@users.noreply.github.com'
+                commit_message: 'action: wiki sync'
