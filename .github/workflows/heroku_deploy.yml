@@ -12,8 +12,13 @@ jobs:
       - name: copy server to root and commit
         run: |
           mv ./server/* ./
-          git add .
-          git commit -m "heroku deployment commit"
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v7
+        with:
+          author_name: Heroku Deployer
+          author_email: heroku.deployer@ark-automate.com
+          message: "heroku deployment commit"
+          push: false
       - uses: akhileshns/heroku-deploy@v3.11.10
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
