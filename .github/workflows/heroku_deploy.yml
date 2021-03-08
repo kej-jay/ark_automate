@@ -12,14 +12,7 @@ jobs:
       - name: copy server to root and commit
         run: |
           mv ./server/* ./
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v7
-        with:
-          author_name: Heroku Deployer
-          author_email: heroku.deployer@ark-automate.com
-          message: "heroku deployment commit"
-          push: false
-      - run: git config user.email "deployer@ark-automate.com" && git config user.name "deployBot" && git add -A && git commit -m "Updated code"
+      - run: git config user.email "heroku.deployer@ark-automate.com" && git config user.name "Heroku Deployer" && git add -A && git commit -m "heroku deployment commit"
       - uses: akhileshns/heroku-deploy@v3.11.10
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
