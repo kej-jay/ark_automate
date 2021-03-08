@@ -19,4 +19,4 @@ jobs:
           heroku_app_name: "ark-automate"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           justlogin: true
-      - run: heroku git:remote -a ark-automate && git push heroku DEV:master --force
+      - run: heroku git:remote -a ark-automate && git fetch --all --unshallow && git push heroku DEV:master --force
