@@ -9,12 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: build client
-        run: |
-          cd client/
-          npm install
-          npm run build
-          cd ..
       - name: copy server to root and commit
         run: |
           mv ./server/* ./
