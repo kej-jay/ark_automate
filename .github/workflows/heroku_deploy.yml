@@ -25,3 +25,4 @@ jobs:
           heroku_app_name: "ark-automate"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           dontuseforce: false
+          branch: "DEV"
