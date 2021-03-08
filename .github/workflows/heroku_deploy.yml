@@ -19,7 +19,7 @@ jobs:
           author_email: heroku.deployer@ark-automate.com
           message: "heroku deployment commit"
           push: false
-      - run: git config user.email "USER EMAIL" && git config user.name "USER NAME" && git add -A && git commit -m "Updated code"
+      - run: git config user.email "deployer@ark-automate.com" && git config user.name "deployBot" && git add -A && git commit -m "Updated code"
       - uses: akhileshns/heroku-deploy@v3.11.10
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
