@@ -18,6 +18,6 @@ jobs:
           heroku_app_name: "ark-automate"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           justlogin: true
-      - run: heroku git:remote -ahttps://git.heroku.com/ark-automate.git
+      - run: heroku git:remote -a https://git.heroku.com/ark-automate.git
       - run: git config user.email "heroku.deployer@ark-automate.com" && git config user.name "Heroku Deployer" && git add . && git commit -m "heroku deployment commit"
       - run: git fetch --all --unshallow && git push heroku DEV:master --force
