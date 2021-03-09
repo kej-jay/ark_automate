@@ -28,14 +28,14 @@ if (!isDev && cluster.isMaster) {
   mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
   // Priority serve any static files.
-  app.use(express.static(path.resolve(__dirname, 'clientBuild')));
+  app.use(express.static(path.resolve(__dirname, 'build')));
   app.use(express.json());
 
   app.use('/rpa-framework', rpaFrameworkRouter);
 
   // All remaining requests return the React app, so it can handle routing.
    app.get('*', function (request, response) {
-    response.sendFile(path.resolve(__dirname, 'clientBuild', 'index.html'));
+    response.sendFile(path.resolve(__dirname, 'build', 'index.html'));
   }); 
 
   app.listen(PORT, () => {

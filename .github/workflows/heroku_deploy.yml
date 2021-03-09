@@ -15,7 +15,7 @@ jobs:
         run: |
           cd client/ && npm install && CI=false npm run build
           cd ..
-          mv ./client/build/* ./clientBuild
+          mv ./client/build ./
           rm -r client
           mv ./server/* ./
           ls
@@ -27,4 +27,4 @@ jobs:
           justlogin: true
       - run: heroku git:remote -a ark-automate
       - run: git config user.email "heroku.deployer@ark-automate.com" && git config user.name "Heroku Deployer" && git add . && git commit -m "heroku deployment commit"
-      - run: git push heroku DEV:main --force
+      - run: git push heroku DEV:master --force
