@@ -18,7 +18,6 @@ jobs:
           mv ./client/build ./
           rm -r client
           mv ./server/* ./
-          ls
       - uses: akhileshns/heroku-deploy@v3.11.10
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
@@ -27,4 +26,4 @@ jobs:
           justlogin: true
       - run: heroku git:remote -a ark-automate
       - run: git config user.email "heroku.deployer@ark-automate.com" && git config user.name "Heroku Deployer" && git add . && git commit -m "heroku deployment commit"
-      - run: git push heroku DEV:master --force
+      - run: git push heroku master --force
