@@ -15,7 +15,10 @@ jobs:
         run: |
           cd client/ && npm install && CI=false npm run build
           cd ..
+          mv ./client/build/* ./clientBuild
+          rm -r client
           mv ./server/* ./
+          ls
       - uses: akhileshns/heroku-deploy@v3.11.10
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
